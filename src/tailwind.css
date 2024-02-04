@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+.page-wrapper {
+  @apply min-h-screen font-body text-xl font-medium leading-[1.4];
+}
+
+/* Default Heading */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-header;
+}
+
+h1 {
+  @apply text-[46px] font-bold leading-none md:text-5xl lg:text-[68px] xl:text-[70px];
+}
+
+h2 {
+  @apply text-3xl font-semibold leading-none tracking-normal md:text-4xl xl:text-[50px];
+}
+
+a,
+button {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+p {
+  @apply mb-8 last:mb-0;
+}
+
+@layer components {
+  .btn {
+    @apply relative border-2 px-8 py-3 text-center text-base font-semibold leading-[1.5] transition-all duration-[400ms] ease-in-out;
+  }
+
+  .is-large {
+    @apply xl:px-16 xl:py-4;
+  }
+
+  .is-rounded {
+    @apply rounded-[50px];
+  }
+
+  .btn-animation {
+    @apply overflow-hidden before:absolute before:-left-[10%] before:-top-[110%] before:h-0 before:w-[120%] before:rounded-[50%] before:bg-white before:pb-[120%] before:[transform:translate3d(0,_68%,_0)_scale3d(0,_0,_0)]  after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-white after:[transform:translate3d(0,_-100%,_0)] after:[transition:transform_0.4s_cubic-bezier(0.1,_0,_0.3,_1)] hover:bg-black hover:before:[transform:translate3d(0,_0,_0)_scale3d(1,_1,_1)] hover:before:[transition:transform_0.4s_cubic-bezier(0.1,_0,_0.3,_1)] hover:after:transition-all hover:after:delay-[400ms] hover:after:duration-[500ms] hover:after:ease-linear hover:after:[transform:translate3d(0,_0,_0)];
+  }
+
+  .is-transparent {
+    @apply before:bg-transparent after:bg-transparent;
+  }
+
+  .btn-animation span {
+    @apply relative z-10 block;
+  }
+  .btn-animation:hover span {
+    @apply animate-[fill-up-initial_0.3s_forwards,_fill-up-end_0.3s_forwards_0.3s];
+  }
+
+  .is-atomic-tangerine {
+    @apply border-ColorAtomicTangerine bg-ColorAtomicTangerine text-black hover:bg-white;
+  }
+
+  .is-outline-white {
+    @apply border-white bg-transparent text-white hover:bg-white hover:text-black;
+  }
+}
+
+/* Main Wrapper */
+.main-wrapper {
+  @apply overflow-hidden;
+}
+
+.container-default {
+  @apply mx-auto max-w-[1400px] px-4 sm:px-8 md:px-10 lg:px-8 xl:px-10 xxl:px-[50px];
+}
+
+/* Section Space */
+.section-space {
+  @apply py-20 lg:py-[100px] xl:py-[120px];
+}
+.section-space-bottom {
+  @apply pb-20 lg:pb-[100px] xl:pb-[120px];
+}
